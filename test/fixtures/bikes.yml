@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  type: 
+  description: MyText
+  brand: MyString
+  daily_rate: 9.99
+
+two:
+  name: MyString
+  type: 
+  description: MyText
+  brand: MyString
+  daily_rate: 9.99
