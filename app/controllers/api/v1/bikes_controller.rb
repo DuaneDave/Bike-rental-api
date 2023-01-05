@@ -1,6 +1,5 @@
-class BikesController < ApplicationController
-  before_action :set_bike, only: %i[show update destroy]
-
+class Api::V1::BikesController < ApplicationController
+  
   # GET /bikes
   def index
     @bikes = Bike.all
