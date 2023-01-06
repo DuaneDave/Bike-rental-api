@@ -31,6 +31,6 @@ class Api::V1::BikesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def bike_params
-    params.require(:bike).permit(:name, :description, :brand, :bike_type, :daily_rate)
+    params.require(:bike).permit(:name, :bike_type, :description, :brand, :daily_rate, { color: [], images: {} })
   end
 end
