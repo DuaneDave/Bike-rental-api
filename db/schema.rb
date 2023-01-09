@@ -10,8 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_05_095840) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_06_143850) do
   # These are extensions that must be enabled in order to support this database
+  enable_extension "hstore"
   enable_extension "plpgsql"
 
   create_table "bikes", force: :cascade do |t|
@@ -22,6 +23,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_05_095840) do
     t.decimal "daily_rate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "color", default: [], array: true
+    t.hstore "images"
   end
 
   create_table "reservations", force: :cascade do |t|
