@@ -55,5 +55,29 @@ describe 'Bikes API' do
         run_test!
       end
     end
+
+    path '/api/v1/bikes/{id}' do
+      delete 'Deletes bike' do
+        tags 'Bikes'
+        produces 'application/json', 'application/xml'
+        response '204', 'bikes deleted' do
+          schema type: :array,
+                 items: {
+                   type: :object,
+                   properties: {
+                     id: { type: :integer },
+                     name: { type: :string },
+                     bike_type: { type: :string },
+                     description: { type: :string },
+                     brand: { type: :string },
+                     daily_rate: { type: :decimal },
+                     images: { type: :hstore },
+                     color: { type: :array }
+                   }
+                 }
+          run_test!
+        end
+      end
+    end
   end
 end

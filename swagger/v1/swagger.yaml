@@ -121,6 +121,59 @@ paths:
                       type: hstore
                     color:
                       type: array
+  "/api/v1/bikes/{id}":
+    delete:
+      summary: Deletes bike
+      tags:
+      - Bikes
+      responses:
+        '204':
+          description: bikes deleted
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    bike_type:
+                      type: string
+                    description:
+                      type: string
+                    brand:
+                      type: string
+                    daily_rate:
+                      type: decimal
+                    images:
+                      type: hstore
+                    color:
+                      type: array
+            application/xml:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    bike_type:
+                      type: string
+                    description:
+                      type: string
+                    brand:
+                      type: string
+                    daily_rate:
+                      type: decimal
+                    images:
+                      type: hstore
+                    color:
+                      type: array
   "/api/v1/reservations":
     post:
       summary: Creates a reservation
@@ -208,6 +261,47 @@ paths:
                       type: string
                     due_date:
                       type: string
+  "/api/v1/reservations/{id}":
+    delete:
+      summary: Deletes reservation
+      tags:
+      - Reservations
+      responses:
+        '204':
+          description: reservations deleted
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    bike_id:
+                      type: integer
+                    user_id:
+                      type: integer
+                    reservation_date:
+                      type: string
+                    due_date:
+                      type: string
+            application/xml:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    bike_id:
+                      type: integer
+                    user_id:
+                      type: integer
+                    reservation_date:
+                      type: string
+                    due_date:
+                      type: string
   "/api/v1/users":
     post:
       summary: Creates a user
@@ -254,6 +348,51 @@ paths:
       responses:
         '200':
           description: users found
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    email:
+                      type: string
+                    password:
+                      type: string
+                    created_at:
+                      type: string
+                    updated_at:
+                      type: string
+            application/xml:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    email:
+                      type: string
+                    password:
+                      type: string
+                    created_at:
+                      type: string
+                    updated_at:
+                      type: string
+  "/api/v1/users/{id}":
+    delete:
+      summary: Deletes user
+      tags:
+      - Users
+      responses:
+        '204':
+          description: users deleted
           content:
             application/json:
               schema:

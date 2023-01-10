@@ -33,12 +33,34 @@ describe 'Users API' do
                    id: { type: :integer },
                    name: { type: :string },
                    email: { type: :string },
-                   password_digest: { type: :string },
+                   password: { type: :string },
                    created_at: { type: :string },
                    updated_at: { type: :string }
                  }
                }
         run_test!
+      end
+    end
+
+    path '/api/v1/users/{id}' do
+      delete 'Deletes user' do
+        tags 'Users'
+        produces 'application/json', 'application/xml'
+        response '204', 'users deleted' do
+          schema type: :array,
+                 items: {
+                   type: :object,
+                   properties: {
+                     id: { type: :integer },
+                     name: { type: :string },
+                     email: { type: :string },
+                     password_digest: { type: :string },
+                     created_at: { type: :string },
+                     updated_at: { type: :string }
+                   }
+                 }
+          run_test!
+        end
       end
     end
   end

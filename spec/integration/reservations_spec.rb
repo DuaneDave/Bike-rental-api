@@ -54,5 +54,26 @@ describe 'Reservations API' do
         run_test!
       end
     end
+
+    path '/api/v1/reservations/{id}' do
+      delete 'Deletes reservation' do
+        tags 'Reservations'
+        produces 'application/json', 'application/xml'
+        response '204', 'reservations deleted' do
+          schema type: :array,
+                 items: {
+                   type: :object,
+                   properties: {
+                     id: { type: :integer },
+                     bike_id: { type: :integer },
+                     user_id: { type: :integer },
+                     reservation_date: { type: :string },
+                     due_date: { type: :string }
+                   }
+                 }
+          run_test!
+        end
+      end
+    end
   end
 end
