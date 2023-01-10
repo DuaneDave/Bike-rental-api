@@ -60,9 +60,9 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Trek Bike Rental API <a name="about-project"></a>
+# 📖 Bike Rental API <a name="about-project"></a>
 
-**[Trek Bike Rental API]** is an API designed allow users create a bike rental web app for any bike rental company.
+**[Bike Rental API]** is an API designed allow users create a bike rental web app for any bike rental company.
 
 ## 🛠 Built With <a name="built-with"></a>
 
