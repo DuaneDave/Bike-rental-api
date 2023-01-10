@@ -12,8 +12,8 @@ describe 'Bikes API' do
           bike_type: { type: :string },
           description: { type: :string },
           brand: { type: :string },
-          daily_rate: { type: :integer },
-          images: { type: :array },
+          daily_rate: { type: :decimal },
+          images: { type: :hstore },
           color: { type: :array }
         },
         required: %w[name bike_type description brand daily_rate images color]
@@ -21,7 +21,7 @@ describe 'Bikes API' do
 
       response '201', 'bike created' do
         let(:bike) do
-          { name: 'Bike', bike_type: 'Mountain', description: 'This is a bike', brand: 'Trek', daily_rate: 10,
+          { name: 'Bike', bike_type: 'Mountain', description: 'This is a bike', brand: 'Trek', daily_rate: 10.0,
             images: { blue: 'da' }, color: ['abc'] }
         end
         run_test!
@@ -47,8 +47,8 @@ describe 'Bikes API' do
                    bike_type: { type: :string },
                    description: { type: :string },
                    brand: { type: :string },
-                   daily_rate: { type: :integer },
-                   images: { type: :array },
+                   daily_rate: { type: :decimal },
+                   images: { type: :hstore },
                    color: { type: :array }
                  }
                }

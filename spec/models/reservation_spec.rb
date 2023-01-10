@@ -1,12 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Reservation, type: :model do
-  User.create(name: 'User', email: 'Email', password: 'Password')
-  Bike.create(name: 'Bike', bike_type: 'Mountain', description: 'This is a bike', brand: 'Trek', daily_rate: 10,
-              images: { blue: 'sdas' }, color: ['sdas'])
+  before(:each) do
+    @user = User.create!(name: 'name', email: 'email3.com', password: 'password')
+    @bike = Bike.create(name: 'bikeone', bike_type: 'one', description: 'dasdas', brand: 'dasd', daily_rate: 231.23,
+                        color: ['dasd'], images: { blue: 'dasda' })
+  end
 
   it 'is valid with valid attributes' do
-    expect(Reservation.new(bike_id: 1, user_id: 1, reservation_date: '2021-03-01',
+    expect(Reservation.new(bike_id: @bike.id, user_id: @user.id, reservation_date: '2021-03-01',
                            due_date: '2021-03-03')).to be_valid
   end
 

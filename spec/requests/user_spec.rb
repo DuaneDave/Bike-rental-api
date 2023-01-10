@@ -24,6 +24,12 @@ RSpec.describe '/user', type: :request do
   end
 
   describe 'POST /create' do
+    context 'with valid parameters' do
+      it 'render a json with created response' do
+        post api_v1_users_path, params: { user: { name: 'name', email: '1234email.com', password: 'password' } }
+        expect(response).to have_http_status(:created)
+      end
+    end
     context 'with invalid parameters' do
       it 'renders a JSON response with errors for the new user' do
         post api_v1_users_path, params: { user: { name: nil, email: nil, password: nil } }
