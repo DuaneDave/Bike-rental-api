@@ -30,9 +30,9 @@ paths:
                 brand:
                   type: string
                 daily_rate:
-                  type: integer
+                  type: decimal
                 images:
-                  type: array
+                  type: hstore
                 color:
                   type: array
               required:
@@ -56,9 +56,9 @@ paths:
                 brand:
                   type: string
                 daily_rate:
-                  type: integer
+                  type: decimal
                 images:
-                  type: array
+                  type: hstore
                 color:
                   type: array
               required:
@@ -94,9 +94,9 @@ paths:
                     brand:
                       type: string
                     daily_rate:
-                      type: integer
+                      type: decimal
                     images:
-                      type: array
+                      type: hstore
                     color:
                       type: array
             application/xml:
@@ -116,9 +116,9 @@ paths:
                     brand:
                       type: string
                     daily_rate:
-                      type: integer
+                      type: decimal
                     images:
-                      type: array
+                      type: hstore
                     color:
                       type: array
   "/api/v1/reservations":
@@ -295,4 +295,4 @@ servers:
 - url: https://{defaultHost}
   variables:
     defaultHost:
-      default: localhost:3000
+      default: www.example.com
