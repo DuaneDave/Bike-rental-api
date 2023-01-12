@@ -25,7 +25,7 @@ class Api::V1::BikesController < ApplicationController
   # DELETE /bikes/1
   def destroy
     @bike = Bike.find(params[:id])
-
+      # refressh id
     if @bike.destroy
       render json: { message: 'Bike deleted' }, status: :ok
     else
