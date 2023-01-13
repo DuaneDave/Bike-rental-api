@@ -99,13 +99,13 @@ After you're finished please remove all the comments and instructions!
 
 ## API-Documentain
 
-- [Link To Documentation](https://bike-web.herokuapp.com/api-docs)
+- [Link To Documentation](https://bike-rental-api.onrender.com/api-docs/index.html)
 
 <!-- LIVE DEMO -->
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://bike-web.herokuapp.com/api/v1/bikes)
+- [Live Demo Link](https://bike-rental-api.onrender.com/api/v1/bikes)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
