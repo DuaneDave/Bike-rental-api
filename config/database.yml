@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: Bike_rental_api_production
-  username: Bike_rental_api
-  password: <%= ENV["BIKE_RENTAL_API_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
