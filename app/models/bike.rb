@@ -1,7 +1,7 @@
 class Bike < ApplicationRecord
   has_many :reservations, dependent: :destroy
   belongs_to :user
-  
+
   validates :name, presence: true
   validates :description, presence: true
   validates :brand, presence: true

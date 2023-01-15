@@ -33,9 +33,7 @@ class Api::V1::ReservationsController < ApplicationController
     end
   end
 
-
-
-  #Fetch RESERVED BIKE
+  # Fetch RESERVED BIKE
 
   private
 
