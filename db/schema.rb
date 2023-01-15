@@ -25,6 +25,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_06_143850) do
     t.datetime "updated_at", null: false
     t.string "color", default: [], array: true
     t.hstore "images"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_bikes_on_user_id"
   end
 
   create_table "reservations", force: :cascade do |t|
@@ -47,6 +49,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_06_143850) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "bikes", "users"
   add_foreign_key "reservations", "bikes"
   add_foreign_key "reservations", "users"
 end

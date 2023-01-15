@@ -3,12 +3,12 @@ class Api::V1::ReservationsController < ApplicationController
   def index
     @reservations = Reservation.all
 
-    render json: @reservations
+    render json: @reservations, include: :bike
   end
 
   # GET /reservations/1
   def show
-    render json: @reservation
+    render json: @reservation, include: :bike
   end
 
   # POST /reservations
@@ -33,9 +33,12 @@ class Api::V1::ReservationsController < ApplicationController
     end
   end
 
+  # Fetch RESERVED BIKE
+
   private
 
   # Only allow a list of trusted parameters through.
+
   def reservation_params
     params.require(:reservation).permit(:reservation_date, :due_date, :user_id, :bike_id, :city)
   end
