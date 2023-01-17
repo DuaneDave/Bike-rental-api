@@ -27,7 +27,7 @@ class Api::V1::UsersController < ApplicationController
     @user = User.find(params[:id])
 
     if @user.destroy
-      render json: { message: 'User deleted' }, status: :ok
+      render json: { message: 'User deleted' }, status: :no_content
     else
       render json: @user.errors, status: :unprocessable_entity
     end
