@@ -27,7 +27,7 @@ class Api::V1::ReservationsController < ApplicationController
     @reservation = Reservation.find(params[:id])
 
     if @reservation.destroy
-      render json: { message: 'Reservation deleted' }, status: :ok
+      render json: { message: 'Reservation deleted' }, status: :no_content
     else
       render json: @reservation.errors, status: :unprocessable_entity
     end
