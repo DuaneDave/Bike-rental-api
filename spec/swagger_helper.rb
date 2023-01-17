@@ -25,7 +25,7 @@ RSpec.configure do |config|
           url: 'https://{defaultHost}',
           variables: {
             defaultHost: {
-              default: 'www.bike-rental-api.onrender.com'
+              default: 'https://bike-rental-api.onrender.com'
             }
           }
         }
