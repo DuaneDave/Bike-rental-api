@@ -11,26 +11,27 @@ describe 'Reservations API' do
           bike_id: { type: :integer },
           user_id: { type: :integer },
           reservation_date: { type: :string },
-          due_date: { type: :string }
+          due_date: { type: :string },
+          city: { type: :string }
         },
-        required: %w[bike_id user_id reservation_date due_date]
+        required: %w[bike_id user_id reservation_date due_date city]
       }
 
-      before(:each) do
-        @user = User.create!(name: 'name', email: 'email3.com', password: 'password')
-        @bike = Bike.create(name: 'bikeone', bike_type: 'one', description: 'dasdas', brand: 'dasd',
-                            daily_rate: 231.23, color: ['dasd'], images: { blue: 'dasda' })
+      let(:user) { User.create!(name: 'name', email: 'email.com', password: 'password') }
+      let(:bike) do
+        Bike.create(name: 'bikeone', bike_type: 'one', description: 'dasdas', brand: 'dasd',
+                    daily_rate: 231.23, color: ['dasd'], images: { blue: 'dasda' }, user_id: user.id)
       end
 
       response '201', 'reservation created' do
         let(:reservation) do
-          { bike_id: @bike.id, user_id: @user.id, reservation_date: '2021-03-01', due_date: '2021-03-03' }
+          { bike_id: bike.id, user_id: user.id, reservation_date: '2021-03-01', due_date: '2021-03-03', city: 'Bogota' }
         end
         run_test!
       end
 
       response '422', 'invalid request' do
-        let(:reservation) { { bike_id: @bike.id } }
+        let(:reservation) { { bike_id: bike.id } }
         run_test!
       end
     end
@@ -48,7 +49,8 @@ describe 'Reservations API' do
                    bike_id: { type: :integer },
                    user_id: { type: :integer },
                    reservation_date: { type: :string },
-                   due_date: { type: :string }
+                   due_date: { type: :string },
+                   city: { type: :string }
                  }
                }
         run_test!
@@ -68,7 +70,8 @@ describe 'Reservations API' do
                      bike_id: { type: :integer },
                      user_id: { type: :integer },
                      reservation_date: { type: :string },
-                     due_date: { type: :string }
+                     due_date: { type: :string },
+                     city: { type: :string }
                    }
                  }
           run_test!

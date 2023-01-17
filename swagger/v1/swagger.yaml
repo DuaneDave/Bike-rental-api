@@ -35,6 +35,8 @@ paths:
                   type: hstore
                 color:
                   type: array
+                user_id:
+                  type: integer
               required:
               - name
               - bike_type
@@ -43,6 +45,7 @@ paths:
               - daily_rate
               - images
               - color
+              - user_id
           application/xml:
             schema:
               type: object
@@ -61,6 +64,8 @@ paths:
                   type: hstore
                 color:
                   type: array
+                user_id:
+                  type: integer
               required:
               - name
               - bike_type
@@ -69,6 +74,7 @@ paths:
               - daily_rate
               - images
               - color
+              - user_id
     get:
       summary: Retrieves bikes
       tags:
@@ -99,6 +105,8 @@ paths:
                       type: hstore
                     color:
                       type: array
+                    user_id:
+                      type: integer
             application/xml:
               schema:
                 type: array
@@ -121,6 +129,8 @@ paths:
                       type: hstore
                     color:
                       type: array
+                    user_id:
+                      type: integer
   "/api/v1/bikes/{id}":
     delete:
       summary: Deletes bike
@@ -152,6 +162,8 @@ paths:
                       type: hstore
                     color:
                       type: array
+                    user_id:
+                      type: integer
             application/xml:
               schema:
                 type: array
@@ -174,6 +186,8 @@ paths:
                       type: hstore
                     color:
                       type: array
+                    user_id:
+                      type: integer
   "/api/v1/reservations":
     post:
       summary: Creates a reservation
@@ -434,4 +448,4 @@ servers:
 - url: https://{defaultHost}
   variables:
     defaultHost:
-      default: www.example.com
+      default: www.bike-rental-api.onrender.com

@@ -16,7 +16,7 @@ describe 'Users API' do
       }
 
       response '201', 'user created' do
-        let(:user) { { name: 'haaadii', email: 'email231@gmail.com', password: 'Password' } }
+        let(:user) { { name: 'haaadii', email: 'email21@gmail.com', password: 'Password' } }
         run_test!
       end
     end

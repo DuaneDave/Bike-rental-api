@@ -14,15 +14,17 @@ describe 'Bikes API' do
           brand: { type: :string },
           daily_rate: { type: :decimal },
           images: { type: :hstore },
-          color: { type: :array }
+          color: { type: :array },
+          user_id: { type: :integer }
         },
-        required: %w[name bike_type description brand daily_rate images color]
+        required: %w[name bike_type description brand daily_rate images color user_id]
       }
 
       response '201', 'bike created' do
+        let(:user) { User.create!(name: 'name', email: 'email.com', password: 'password') }
         let(:bike) do
           { name: 'Bike', bike_type: 'Mountain', description: 'This is a bike', brand: 'Trek', daily_rate: 10.0,
-            images: { blue: 'da' }, color: ['abc'] }
+            images: { blue: 'da' }, color: ['abc'], user_id: user.id }
         end
         run_test!
       end
@@ -49,7 +51,8 @@ describe 'Bikes API' do
                    brand: { type: :string },
                    daily_rate: { type: :decimal },
                    images: { type: :hstore },
-                   color: { type: :array }
+                   color: { type: :array },
+                   user_id: { type: :integer }
                  }
                }
         run_test!
@@ -72,7 +75,8 @@ describe 'Bikes API' do
                      brand: { type: :string },
                      daily_rate: { type: :decimal },
                      images: { type: :hstore },
-                     color: { type: :array }
+                     color: { type: :array },
+                     user_id: { type: :integer }
                    }
                  }
           run_test!
