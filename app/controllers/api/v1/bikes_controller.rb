@@ -27,7 +27,7 @@ class Api::V1::BikesController < ApplicationController
     @bike = Bike.find(params[:id])
     # refressh id
     if @bike.destroy
-      render json: { message: 'Bike deleted' }, status: :ok
+      render json: { message: 'Bike deleted' }, status: :no_content
     else
       render json: @bike.errors, status: :unprocessable_entity
     end
