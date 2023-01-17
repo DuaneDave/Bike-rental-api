@@ -1,15 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe '/bike', type: :request do
-  let(:valid_attributes) do
-    { name: 'Bike', bike_type: 'Mountain', description: 'This is a bike dfsda sdasd asdas dasd asdas das',
-      brand: 'Trek', daily_rate: 10.00, images: { blue: 'sdas', red: 'dasda' }, color: %w[sdas dasda] }
-  end
+  let(:user) { User.create!(name: 'name', email: 'email.com', password: 'password') }
+  let(:valid_attributes) { {name: 'bikeone', bike_type: 'one', description: 'dasdas', brand: 'dasd', daily_rate: 231.23, color: ['dasd'], images: { blue: 'dasda' }, user_id: user.id }}
 
   describe 'GET /index' do
     it 'renders a successful response' do
-      Bike.create!(name: 'Bike', bike_type: 'Mountain', description: 'This is a bike', brand: 'Trek', daily_rate: 10,
-                   images: { blue: 'sdas' }, color: ['sdas'])
+      Bike.create! valid_attributes
       get api_v1_bikes_path
       expect(response).to be_successful
     end
@@ -17,8 +14,7 @@ RSpec.describe '/bike', type: :request do
 
   describe 'GET /show' do
     it 'renders a successful response' do
-      bike = Bike.create!(name: 'Bike', bike_type: 'Mountain', description: 'This is a bike', brand: 'Trek',
-                          daily_rate: 10, images: { blue: 'sdas' }, color: ['sdas'])
+      bike = Bike.create! valid_attributes
       get api_v1_bike_path(bike)
       expect(response).to be_successful
     end
