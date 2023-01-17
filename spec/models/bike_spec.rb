@@ -6,7 +6,7 @@ RSpec.describe Bike, type: :model do
     Bike.create(name: 'Bike', bike_type: 'Mountain', description: 'This is a bike', brand: 'Trek', daily_rate: 10,
                 images: { blue: 'sdas' }, color: ['sdas'], user_id: user.id)
   end
-  
+
   it 'is valid with valid attributes' do
     expect(subject).to be_valid
   end

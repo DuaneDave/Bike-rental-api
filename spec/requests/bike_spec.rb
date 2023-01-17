@@ -2,7 +2,10 @@ require 'rails_helper'
 
 RSpec.describe '/bike', type: :request do
   let(:user) { User.create!(name: 'name', email: 'email.com', password: 'password') }
-  let(:valid_attributes) { {name: 'bikeone', bike_type: 'one', description: 'dasdas', brand: 'dasd', daily_rate: 231.23, color: ['dasd'], images: { blue: 'dasda' }, user_id: user.id }}
+  let(:valid_attributes) do
+    { name: 'bikeone', bike_type: 'one', description: 'dasdas', brand: 'dasd', daily_rate: 231.23, color: ['dasd'],
+      images: { blue: 'dasda' }, user_id: user.id }
+  end
 
   describe 'GET /index' do
     it 'renders a successful response' do

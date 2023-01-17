@@ -41,20 +41,20 @@ describe 'Bikes API' do
 
       response '200', 'bikes found' do
         schema type: :array,
-                items: {
-                  type: :object,
-                  properties: {
-                    id: { type: :integer },
-                    name: { type: :string },
-                    bike_type: { type: :string },
-                    description: { type: :string },
-                    brand: { type: :string },
-                    daily_rate: { type: :decimal },
-                    images: { type: :hstore },
-                    color: { type: :array },
-                    user_id: { type: :integer }
-                  }
-                }
+               items: {
+                 type: :object,
+                 properties: {
+                   id: { type: :integer },
+                   name: { type: :string },
+                   bike_type: { type: :string },
+                   description: { type: :string },
+                   brand: { type: :string },
+                   daily_rate: { type: :decimal },
+                   images: { type: :hstore },
+                   color: { type: :array },
+                   user_id: { type: :integer }
+                 }
+               }
         run_test!
       end
     end

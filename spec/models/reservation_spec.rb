@@ -2,11 +2,16 @@ require 'rails_helper'
 
 RSpec.describe Reservation, type: :model do
   let(:user) { User.create(name: 'name', email: 'email1.com', password: 'password') }
-  let(:bike) { Bike.create(name: 'bikeone', bike_type: 'one', description: 'dasdas', brand: 'dasd', daily_rate: 231.23, color: ['dasd'], images: { blue: 'dasda' }, user_id: user.id) }
-  let(:valid_attributes) { {reservation_date: '2021-03-01', due_date: '2021-03-03', user_id: user.id, bike_id: bike.id, city: 'Accra' } }
+  let(:bike) do
+    Bike.create(name: 'bikeone', bike_type: 'one', description: 'dasdas', brand: 'dasd', daily_rate: 231.23,
+                color: ['dasd'], images: { blue: 'dasda' }, user_id: user.id)
+  end
+  let(:valid_attributes) do
+    { reservation_date: '2021-03-01', due_date: '2021-03-03', user_id: user.id, bike_id: bike.id, city: 'Accra' }
+  end
 
   it 'is valid with valid attributes' do
-    subject  = Reservation.new(valid_attributes)
+    subject = Reservation.new(valid_attributes)
     expect(subject).to be_valid
   end
 

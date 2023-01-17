@@ -27,17 +27,17 @@ describe 'Users API' do
 
       response '200', 'users found' do
         schema type: :array,
-              items: {
-                type: :object,
-                properties: {
-                  id: { type: :integer },
-                  name: { type: :string },
-                  email: { type: :string },
-                  password: { type: :string },
-                  created_at: { type: :string },
-                  updated_at: { type: :string }
-                }
-              }
+               items: {
+                 type: :object,
+                 properties: {
+                   id: { type: :integer },
+                   name: { type: :string },
+                   email: { type: :string },
+                   password: { type: :string },
+                   created_at: { type: :string },
+                   updated_at: { type: :string }
+                 }
+               }
         run_test!
       end
     end
@@ -48,17 +48,17 @@ describe 'Users API' do
         produces 'application/json', 'application/xml'
         response '204', 'users deleted' do
           schema type: :array,
-                items: {
-                  type: :object,
-                  properties: {
-                    id: { type: :integer },
-                    name: { type: :string },
-                    email: { type: :string },
-                    password_digest: { type: :string },
-                    created_at: { type: :string },
-                    updated_at: { type: :string }
-                  }
-                }
+                 items: {
+                   type: :object,
+                   properties: {
+                     id: { type: :integer },
+                     name: { type: :string },
+                     email: { type: :string },
+                     password_digest: { type: :string },
+                     created_at: { type: :string },
+                     updated_at: { type: :string }
+                   }
+                 }
           run_test!
         end
       end
