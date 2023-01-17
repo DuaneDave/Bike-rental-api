@@ -46,19 +46,11 @@ describe 'Users API' do
       delete 'Deletes user' do
         tags 'Users'
         produces 'application/json', 'application/xml'
-        response '204', 'users deleted' do
-          schema type: :array,
-                 items: {
-                   type: :object,
-                   properties: {
-                     id: { type: :integer },
-                     name: { type: :string },
-                     email: { type: :string },
-                     password_digest: { type: :string },
-                     created_at: { type: :string },
-                     updated_at: { type: :string }
-                   }
-                 }
+        parameter name: :id, in: :path, type: :string
+
+        response '204', 'user deleted' do
+          let(:user) { User.create!(name: 'name', email: 'email.com', password: 'password') }
+          let(:id) { user.id }
           run_test!
         end
       end
