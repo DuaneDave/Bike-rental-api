@@ -1,16 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe '/reservation', type: :request do
-  before(:each) do
-    @user = User.create!(name: 'name', email: 'email3.com', password: 'password')
-    @bike = Bike.create(name: 'bikeone', bike_type: 'one', description: 'dasdas', brand: 'dasd', daily_rate: 231.23,
-                        color: ['dasd'], images: { blue: 'dasda' })
-  end
-
+  let(:user) { User.create!(name: 'name', email: 'email.com', password: 'password') }
+  let(:bike) { Bike.create!(name: 'bikeone', bike_type: 'one', description: 'dasdas', brand: 'dasd', daily_rate: 231.23, color: ['dasd'], images: { blue: 'dasda' }, user_id: user.id )}
   let(:valid_attributes) do
-    { reservation_date: Date.today, due_date: Date.today + 1, user_id: @user.id, bike_id: @bike.id }
+    { reservation_date: Date.today, due_date: Date.today + 1, user_id: user.id, bike_id: bike.id, city: 'Ali city' }
   end
-
   let(:invalid_attributes) do
     { bike_id: nil, user_id: nil, reservation_date: nil, due_date: nil }
   end
