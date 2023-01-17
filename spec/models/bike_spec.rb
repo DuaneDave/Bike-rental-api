@@ -1,9 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Bike, type: :model do
+  subject do
+    user = User.create(name: 'User', email: 'Email.com', password: 'Password')
+    Bike.create(name: 'Bike', bike_type: 'Mountain', description: 'This is a bike', brand: 'Trek', daily_rate: 10,
+                images: { blue: 'sdas' }, color: ['sdas'], user_id: user.id)
+  end
+  
   it 'is valid with valid attributes' do
-    expect(Bike.new(name: 'Bike', bike_type: 'Mountain', description: 'This is a bike', brand: 'Trek', daily_rate: 10,
-                    images: { blue: 'sdas' }, color: ['sdas'])).to be_valid
+    expect(subject).to be_valid
   end
 
   it 'is not valid without a name' do
