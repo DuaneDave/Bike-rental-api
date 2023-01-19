@@ -242,6 +242,7 @@ If you like this project, kindly give as a ⭐️
 <!-- ACKNOWLEDGEMENTS -->
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
+[the design](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign) provided by [Murat Korkmaz](https://www.behance.net/muratk) on Behance.
 
 We would like to thank [Microverse](https://www.microverse.org/) for inspiring this project
 
