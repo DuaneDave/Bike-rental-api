@@ -62,7 +62,7 @@ After you're finished please remove all the comments and instructions!
 
 # 📖 Bike Rental API <a name="about-project"></a>
 
-**[Bike Rental API]** is an API designed allow users create a bike rental web app for any bike rental company.
+**Bike Rental API** is an API designed to allow users create a bike rental web app for any bike rental company.The database designed is based on this [schema](http://...)
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -91,9 +91,9 @@ After you're finished please remove all the comments and instructions!
 
 > Describe between 1-3 key features of the application.
 
-- **[Add_bike]**
-- **[Delete_bike]**
-- **[Fetch/get_bike]**
+- **Add_bike**
+- **Delete_bike**
+- **Fetch/get_bike**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -106,6 +106,10 @@ After you're finished please remove all the comments and instructions!
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 - [Live Demo Link](https://bike-rental-api.onrender.com/api/v1/bikes)
+
+## Front-end Repository
+
+[Front-end Repo](https://github.com/DuaneDave/Bike-rental)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -191,16 +195,29 @@ Example:
 - Twitter: [@HaaDiii_99](https://twitter.com/HaaDiii_99)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/hamid-ali-01a872213/)
 
+👤 **Obiebi David**
+
+- GitHub: [@githubhandle](https://github.com/DuaneDave)
+- Twitter: [@twitterhandle](https://twitter.com/dave_duane)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/david-obiebi)
+
+
+👤 **Anas Chabaane**
+
+- GitHub: [@githubhandle](https://github.com/ChaabaneAnas/)
+- Twitter: [@twitterhandle](https://twitter.com/AnasChabaane)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/chaabaneanas/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Update_Reservation]**
-- [ ] **[Update_Bike]**
-- [ ] **[API_Token]**
-- [ ] **[User_Authorization]**
+- [x] **Update_Reservation**
+- [x] **Update_Bike**
+- [x] **API_Token**
+- [x] **User_Authorization**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
