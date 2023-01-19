@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   mount Rswag::Api::Engine => '/api-docs'
   namespace :api do
     namespace :v1 do
-      resources :users, only: %i[create, show, destroy, index]
-      resources :bikes, only: %i[create, show, destroy, index]
-      resources :reservations , only: %i[create, show, destroy, index]
+      resources :users, only: [:create, :show, :destroy, :index]
+      resources :bikes, only: [:create, :show, :destroy, :index]
+      resources :reservations , only: [:create, :show, :destroy, :index]
     end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
