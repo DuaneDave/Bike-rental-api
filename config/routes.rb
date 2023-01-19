@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   mount Rswag::Api::Engine => '/api-docs'
   namespace :api do
     namespace :v1 do
-      resources :user, only: %i[create, show, destroy, index]
+      resources :users, only: %i[create, show, destroy, index]
       resources :bikes, only: %i[create, show, destroy, index]
       resources :reservations , only: %i[create, show, destroy, index]
     end
