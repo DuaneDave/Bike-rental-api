@@ -8,6 +8,7 @@ class Api::V1::BikesController < ApplicationController
 
   # GET /bikes/1
   def show
+    @bike = Bike.find(params[:id])
     render json: @bike
   end
 
