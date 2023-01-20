@@ -8,6 +8,7 @@ class Api::V1::ReservationsController < ApplicationController
 
   # GET /reservations/1
   def show
+    @reservation = Reservation.find(params[:id])
     render json: @reservation, include: :bike
   end
 
