@@ -62,7 +62,8 @@ After you're finished please remove all the comments and instructions!
 
 # 📖 Bike Rental API <a name="about-project"></a>
 
-**Bike Rental API** is an API designed to allow users create a bike rental web app for any bike rental company.The database designed is based on this [schema](http://...)
+**Bike Rental API** is an API designed to allow users create a bike rental web app for any bike rental company.The database designed is based on this schema ![Schema](https://user-images.githubusercontent.com/92553079/213936457-b2f80924-1e88-408e-bdf2-e0cc5f4a30f2.jpeg)
+
 
 ## 🛠 Built With <a name="built-with"></a>
 
